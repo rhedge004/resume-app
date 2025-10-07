@@ -2,7 +2,7 @@ import Image from "next/image";
 import Timeline from "@/components/feature/Timeline";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { getAge } from "@/lib/utils";
+import { basePath, getAge } from "@/lib/utils";
 import ContactList from "@/components/feature/ContactList";
 import SkillList from "@/components/feature/SkillList";
 
@@ -46,6 +46,7 @@ export default function Home() {
       href: "/contact",
     },
   ];
+  console.log("basePath: ", basePath);
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow m-5">
@@ -54,7 +55,7 @@ export default function Home() {
             <div className="w-full lg:w-[20%] shadow-lg">
               <Image
                 className="rounded"
-                src="/image.png"
+                src={`${basePath()}/image.png`}
                 width={700}
                 height={700}
                 style={{ objectFit: "cover" }}
