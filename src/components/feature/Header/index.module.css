@@ -1,0 +1,9 @@
+.oswald {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 35px;
+  color: var(--title-logo);
+
+  @media (max-width: 600px) {
+    font-size: 1.8em;
+  }
+}

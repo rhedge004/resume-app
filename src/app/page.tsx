@@ -1,103 +1,116 @@
 import Image from "next/image";
+import Timeline from "@/components/feature/Timeline";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { getAge } from "@/lib/utils";
+import ContactList from "@/components/feature/ContactList";
+import SkillList from "@/components/feature/SkillList";
+
+interface Contents {
+  title: string;
+  content: () => React.ReactElement;
+  href: string;
+}
 
 export default function Home() {
+  const contents: Contents[] = [
+    {
+      title: "About Me",
+      content: () => (
+        <p>
+          My name is Rhedge Michael Navarro, I&apos;m {getAge()} and currently
+          residing in Santo Tomas, Batangas, Philippines. I hold a Bachelor of
+          Science in Information Technology (BSIT), which I completed in 2017.
+          Since graduation, I&apos;ve spent 5 years in the IT industry,
+          specializing in Frontend Development.
+          <br />
+          <br />I am fluent in both English and Filipino. I pride myself on
+          having excellent communication and presentation skills.
+        </p>
+      ),
+      href: "/about",
+    },
+    {
+      title: "Skills",
+      content: () => <SkillList />,
+      href: "/experience",
+    },
+    {
+      title: "Work Experience",
+      content: () => <Timeline />,
+      href: "/experience",
+    },
+    {
+      title: "Contact",
+      content: () => <ContactList />,
+      href: "/contact",
+    },
+  ];
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow m-5">
+        <div className="w-full space-y-5">
+          <div className="flex flex-col sm:flex-row sm:space-x-0 sm:space-y-4 gap-5">
+            <div className="w-full lg:w-[20%] shadow-lg">
+              <Image
+                className="rounded"
+                src="/image.png"
+                width={700}
+                height={700}
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt={""}
+              />
+            </div>
+            <div className="w-full">
+              <h1>Overview</h1>
+              <p className="text-[1em]">
+                {getAge()} <span className="text-blue-400">/</span> Philippines{" "}
+                <span className="text-blue-400">/</span> Software Engineer
+              </p>
+              <hr className="border-blue-500" />
+              <p className="max-w-3/4">
+                I am a Software Engineer specializing in frontend development.
+                With 5 years of professional experience, my expertise spans both
+                the design and technical aspects of software development, with a
+                focus on modern frameworks like <strong>React</strong>,{" "}
+                <strong>Next.js</strong> and <strong>Typescript</strong>. Along
+                with a strong command of modern CSS frameworks like{" "}
+                <strong>Tailwind CSS</strong> I am actively seeking
+                opportunities where I can apply my technical skills and
+                contribute to a growth-oriented team.
+                <br /> Please take a look at my online résumé, where I showcase
+                my skills as a frontend developer.
+              </p>
+              <Button size="lg" className="mt-2">
+                View Source Code
+              </Button>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="flex flex-wrap">
+            {contents.map((content: Contents, i: number) => (
+              <div key={i} className="w-full relative md:w-1/2 lg:w-1/4 p-2">
+                <div
+                  className={`relative bg-white border-black h-[500px] max-h-[500px] overflow-hidden`}
+                >
+                  <h1>{content.title}</h1>
+                  {content.content()}
+                  <div className="absolute inset-x-0 bottom-0 h-[80px] bg-white/30 backdrop-blur-xs rounded"></div>
+                  <Link href={content.href}>
+                    <Button
+                      variant="default"
+                      className="absolute bottom-4 left-1/2 z-10 hover:cursor-pointer transition duration-300 hover:scale-105"
+                    >
+                      Read More
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
