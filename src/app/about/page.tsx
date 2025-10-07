@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { convertToReadableDate, getAge } from "@/lib/utils";
+import { basePath, convertToReadableDate, getAge } from "@/lib/utils";
 import { birthday } from "@/lib/constants";
 
 interface MyData {
@@ -24,9 +24,9 @@ interface Photo {
 
 export default function About() {
   const photos: Photo[] = [
-    { id: 1, src: "/pic1.jpg", alt: "img1" },
-    { id: 2, src: "/pic2.jpg", alt: "img2" },
-    { id: 3, src: "/pic3.jpg", alt: "img3" },
+    { id: 1, src: `${basePath}/pic1.jpg`, alt: "img1" },
+    { id: 2, src: `${basePath}/pic2.jpg`, alt: "img2" },
+    { id: 3, src: `${basePath}/pic3.jpg`, alt: "img3" },
   ];
 
   const educationData: EducationEntry[] = [
