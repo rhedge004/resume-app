@@ -1,12 +1,33 @@
+import { basePath } from "@/lib/utils";
 import Image from "next/image";
 
 // WIP
 function GalleryComponent() {
   const galleryImages = [
-    { id: 1, src: "/image.png", alt: "Main Feature", position: "center" },
-    { id: 2, src: "/image.png", alt: "Thumbnail Top", position: "top" },
-    { id: 3, src: "/image.png", alt: "Thumbnail Left", position: "left" },
-    { id: 4, src: "/image.png", alt: "Thumbnail Right", position: "right" },
+    {
+      id: 1,
+      src: `${basePath}/image.png`,
+      alt: "Main Feature",
+      position: "center",
+    },
+    {
+      id: 2,
+      src: `${basePath}/image.png`,
+      alt: "Thumbnail Top",
+      position: "top",
+    },
+    {
+      id: 3,
+      src: `${basePath}/image.png`,
+      alt: "Thumbnail Left",
+      position: "left",
+    },
+    {
+      id: 4,
+      src: `${basePath}/image.png`,
+      alt: "Thumbnail Right",
+      position: "right",
+    },
   ];
 
   const getPositionClasses = (position: string) => {

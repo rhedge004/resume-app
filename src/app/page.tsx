@@ -55,7 +55,7 @@ export default function Home() {
             <div className="w-full lg:w-[20%] shadow-lg">
               <Image
                 className="rounded"
-                src={`${basePath()}/image.png`}
+                src={`${basePath}/image.png`}
                 width={700}
                 height={700}
                 style={{ objectFit: "cover" }}

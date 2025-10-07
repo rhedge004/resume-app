@@ -23,9 +23,7 @@ export function getAge() {
   return age;
 }
 
-export const basePath = () => {
-  return config.basePath;
-};
+export const basePath = config.basePath;
 
 export const convertToReadableDate = (dateStr: string) =>
   new Date(dateStr).toLocaleDateString("en-US", {
