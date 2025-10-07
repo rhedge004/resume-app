@@ -82,9 +82,14 @@ export default function Home() {
                 <br /> Please take a look at my online résumé, where I showcase
                 my skills as a frontend developer.
               </p>
-              <Button size="lg" className="mt-2">
-                View Source Code
-              </Button>
+              <Link
+                href="https://github.com/rhedge004/resume-app"
+                target="_blank"
+              >
+                <Button size="lg" className="mt-2">
+                  View Source Code
+                </Button>
+              </Link>
             </div>
           </div>
 
