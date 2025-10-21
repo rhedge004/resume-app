@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { basePath, getAge } from "@/lib/utils";
 import ContactList from "@/components/feature/ContactList";
 import SkillList from "@/components/feature/SkillList";
+import { birthday, workStartDate } from "@/lib/constants";
 
 interface Contents {
   title: string;
@@ -18,11 +19,11 @@ export default function Home() {
       title: "About Me",
       content: () => (
         <p>
-          My name is Rhedge Michael Navarro, I&apos;m {getAge()} and currently
-          residing in Santo Tomas, Batangas, Philippines. I hold a Bachelor of
-          Science in Information Technology (BSIT), which I completed in 2017.
-          Since graduation, I&apos;ve spent 5 years in the IT industry,
-          specializing in Frontend Development.
+          My name is Rhedge Michael Navarro, I&apos;m {getAge(birthday)} and
+          currently residing in Santo Tomas, Batangas, Philippines. I hold a
+          Bachelor of Science in Information Technology (BSIT), which I
+          completed in 2017. Since graduation, I&apos;ve spent 5 years in the IT
+          industry, specializing in Frontend Development.
           <br />
           <br />I am fluent in both English and Filipino. I pride myself on
           having excellent communication and presentation skills.
@@ -66,20 +67,21 @@ export default function Home() {
             <div className="w-full">
               <h1>Overview</h1>
               <p className="text-[1em]">
-                {getAge()} <span className="text-blue-400">/</span> Philippines{" "}
-                <span className="text-blue-400">/</span> Software Engineer
+                {getAge(birthday)} <span className="text-blue-400">/</span>{" "}
+                Philippines <span className="text-blue-400">/</span> Software
+                Engineer
               </p>
               <hr className="border-blue-500" />
               <p className="max-w-3/4">
                 I am a Software Engineer specializing in frontend development.
-                With 5 years of professional experience, my expertise spans both
-                the design and technical aspects of software development, with a
-                focus on modern frameworks like <strong>React</strong>,{" "}
-                <strong>Next.js</strong> and <strong>Typescript</strong>. Along
-                with a strong command of modern CSS frameworks like{" "}
-                <strong>Tailwind CSS</strong> I am actively seeking
-                opportunities where I can apply my technical skills and
-                contribute to a growth-oriented team.
+                With {getAge(workStartDate)} years of professional experience,
+                my expertise spans both the design and technical aspects of
+                software development, with a focus on modern frameworks like{" "}
+                <strong>React</strong>, <strong>Next.js</strong> and{" "}
+                <strong>Typescript</strong>. Along with a strong command of
+                modern CSS frameworks like <strong>Tailwind CSS</strong> I am
+                actively seeking opportunities where I can apply my technical
+                skills and contribute to a growth-oriented team.
                 <br /> Please take a look at my online résumé, where I showcase
                 my skills as a frontend developer.
               </p>

@@ -11,17 +11,17 @@ export const skills: Skills[] = [
   {
     name: "ReactJS",
     value: 10,
-    monthExperience: 60,
+    monthExperience: 72,
   },
   {
     name: "React Native",
     value: 10,
-    monthExperience: 36,
+    monthExperience: 48,
   },
   {
     name: "NextJS",
     value: 10,
-    monthExperience: 24,
+    monthExperience: 36,
   },
   {
     name: "AngularJS",
@@ -31,17 +31,17 @@ export const skills: Skills[] = [
   {
     name: "Java",
     value: 5.5,
-    monthExperience: 24,
+    monthExperience: 48,
   },
   {
     name: "Spring Boot",
     value: 4.5,
-    monthExperience: 18,
+    monthExperience: 24,
   },
   {
     name: "Typescript",
     value: 10,
-    monthExperience: 48,
+    monthExperience: 60,
   },
 
   {

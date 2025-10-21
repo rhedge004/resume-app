@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { birthday } from "./constants";
 
 import config from "../../next.config";
 
@@ -8,10 +7,9 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getAge() {
-  const birthDateString = birthday;
+export function getAge(date: string) {
   const today = new Date();
-  const birthDate = new Date(birthDateString);
+  const birthDate = new Date(date);
   let age = today.getFullYear() - birthDate.getFullYear();
   const monthDifference = today.getMonth() - birthDate.getMonth();
   if (

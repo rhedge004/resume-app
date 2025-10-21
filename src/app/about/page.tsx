@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { basePath, convertToReadableDate, getAge } from "@/lib/utils";
-import { birthday } from "@/lib/constants";
+import { birthday, workStartDate } from "@/lib/constants";
 
 interface MyData {
   [key: string]: string;
@@ -58,7 +58,7 @@ export default function About() {
 
   const myData: MyData = {
     name: "Rhedge Michael Navarro",
-    age: getAge().toString(),
+    age: getAge(birthday).toString(),
     birthday: convertToReadableDate(birthday),
     gender: "Male",
     occupation: "Software Engineer",
@@ -74,11 +74,12 @@ export default function About() {
         <div className="flex flex-col sm:flex-row sm:flex-wrap">
           <div className="sm:w-1/2 p-2">
             <p>
-              My name is Rhedge Michael Navarro, I&apos;m {getAge()} and
+              My name is Rhedge Michael Navarro, I&apos;m {getAge(birthday)} and
               currently residing in Santo Tomas, Batangas, Philippines. I hold a
               Bachelor of Science in Information Technology (BSIT), which I
-              completed in 2017. Since graduation, I&apos;ve spent 5 years in
-              the IT industry, specializing in Frontend Development.
+              completed in 2017. Since graduation, I&apos;ve spent{" "}
+              {getAge(workStartDate)} years in the IT industry, specializing in
+              Frontend Development.
               <br />
               <br />I am fluent in both English and Filipino. I pride myself on
               having excellent communication and presentation skills.
