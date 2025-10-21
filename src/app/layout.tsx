@@ -25,7 +25,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} antialiased bg-[url('/${basePath}background.png')]`}
       >
-        <div className="container border-l-5 border-blue-300 bg-white ">
+        <div className="container border-l-5 border-blue-300 bg-white shadow-lg">
           <Header />
           {children}
         </div>
