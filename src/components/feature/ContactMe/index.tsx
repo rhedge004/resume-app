@@ -88,12 +88,12 @@ const FormField: React.FC<FormFieldProps> = ({
 const ContactForm: React.FC = () => {
   const handleSubmit = (
     values: ContactFormValues,
-    { setSubmitting, resetForm }: FormikHelpers<ContactFormValues>
+    { setSubmitting, resetForm }: FormikHelpers<ContactFormValues>,
   ) => {
     setTimeout(() => {
       console.log("Form Data Submitted:", JSON.stringify(values, null, 2));
       alert(
-        `Submission successful! But no data has been sent.\nThis is only used for showcasing formik forms.\n\n${JSON.stringify(values, null, 2)}`
+        `Submission successful! But no data has been sent.\nThis is only used for showcasing formik forms.\n\n${JSON.stringify(values, null, 2)}`,
       );
 
       setSubmitting(false);
@@ -151,8 +151,8 @@ const ContactForm: React.FC = () => {
                 transition duration-300 ease-in-out transform 
                 ${
                   isSubmitting
-                    ? "bg-blue-500 text-gray-600 cursor-not-allowed"
-                    : "bg-sky-400 text-white hover:bg-sky-600 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/50"
+                    ? "bg-blue-400 text-white cursor-not-allowed opacity-70"
+                    : "bg-blue-500 text-white hover:bg-blue-600 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-500/30"
                 }
               `}
           >

@@ -81,63 +81,65 @@ export const skills: Skills[] = [
   },
 ];
 
-export default function SkillList() {
-  const MAX_RATING = 10;
-  const BLUE_500 = "#3B82F6";
-  const GRAY_300 = "#D1D5DB";
-  const SkillRating: React.FC<Skills> = ({ name, value, monthExperience }) => {
-    const safeRating = Math.min(Math.max(0, value), MAX_RATING);
+const MAX_RATING = 10;
+const BLUE_500 = "#3B82F6";
+const GRAY_300 = "#D1D5DB";
 
-    const rectangles = Array.from({ length: MAX_RATING }, (_, index) => {
-      const rectangleValue = index + 1;
-      let rectangleContent;
-      const baseClasses = "w-5 h-3 mx-0.5";
+const SkillRating: React.FC<Skills> = ({ name, value, monthExperience }) => {
+  const safeRating = Math.min(Math.max(0, value), MAX_RATING);
 
-      if (rectangleValue <= safeRating) {
-        rectangleContent = (
-          <div
-            className={`${baseClasses} bg-blue-500`}
-            aria-label="Fully filled rectangle"
-          />
-        );
-      } else if (rectangleValue - 0.5 === safeRating) {
-        rectangleContent = (
-          <div
-            className={baseClasses}
-            style={{
-              background: `linear-gradient(to right, ${BLUE_500} 50%, ${GRAY_300} 50%)`,
-            }}
-            aria-label="Half-filled rectangle"
-          />
-        );
-      } else {
-        rectangleContent = (
-          <div
-            className={`${baseClasses} bg-gray-300`}
-            aria-label="Empty rectangle"
-          />
-        );
-      }
+  const rectangles = Array.from({ length: MAX_RATING }, (_, index) => {
+    const rectangleValue = index + 1;
+    let rectangleContent;
+    const baseClasses = "w-5 h-3 mx-0.5 rounded-sm"; // Added rounded-sm for cleaner look
 
-      return <React.Fragment key={index}>{rectangleContent}</React.Fragment>;
-    });
+    if (rectangleValue <= safeRating) {
+      rectangleContent = (
+        <div
+          className={`${baseClasses} bg-blue-500`}
+          aria-label="Fully filled rectangle"
+        />
+      );
+    } else if (rectangleValue - 0.5 === safeRating) {
+      rectangleContent = (
+        <div
+          className={baseClasses}
+          style={{
+            background: `linear-gradient(to right, ${BLUE_500} 50%, ${GRAY_300} 50%)`,
+          }}
+          aria-label="Half-filled rectangle"
+        />
+      );
+    } else {
+      rectangleContent = (
+        <div
+          className={`${baseClasses} bg-gray-300`}
+          aria-label="Empty rectangle"
+        />
+      );
+    }
 
-    return (
-      <div className="p-1 mb-1">
-        <div className="flex flex-wrap justify-between">
-          <h2>{name}</h2>
-          <h2>{convertMonthsToYears(monthExperience)}</h2>
-        </div>
-        <div className="flex items-center">{rectangles}</div>
-      </div>
-    );
-  };
+    return <React.Fragment key={index}>{rectangleContent}</React.Fragment>;
+  });
+
   return (
-    <div>
-      {skills.map((skill: Skills, index: number) => (
-        <div key={index} className="p-2">
-          <SkillRating {...skill} />
-        </div>
+    <div className="p-1 mb-3">
+      <div className="flex flex-wrap justify-between mb-1">
+        <h3 className="font-medium text-gray-700">{name}</h3>
+        <span className="text-sm text-gray-500">
+          {convertMonthsToYears(monthExperience)}
+        </span>
+      </div>
+      <div className="flex items-center">{rectangles}</div>
+    </div>
+  );
+};
+
+export default function SkillList() {
+  return (
+    <div className="space-y-2">
+      {skills.map((skill: Skills) => (
+        <SkillRating key={skill.name} {...skill} />
       ))}
     </div>
   );

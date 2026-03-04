@@ -4,44 +4,51 @@ import Link from "next/link";
 
 export default function ContactList() {
   return (
-    <div className="flex-column space-y-2">
-      <div className="flex gap-2">
-        <div className="shrink-0 h-9 w-9 bg-accent rounded-full flex items-center justify-center">
-          <MapPin className="h-5 w-5 text-muted-foreground" />
+    <div className="flex flex-col space-y-4">
+      <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+        <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
+          <MapPin className="h-5 w-5" />
         </div>
-        <p>021 Barangay San Luis, Santo Tomas, Batangas 4234</p>
+        <p className="text-gray-600">
+          021 Barangay San Luis, Santo Tomas, Batangas 4234
+        </p>
       </div>
-      <div className="flex gap-2">
-        <div className="shrink-0 h-9 w-9 bg-accent rounded-full flex items-center justify-center">
-          <Phone className="h-5 w-5 text-muted-foreground" />
+      <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+        <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
+          <Phone className="h-5 w-5" />
         </div>
-        <p> +639062579514</p>
+        <p className="text-gray-600">+639062579514</p>
       </div>
-      <div className="flex gap-2">
-        <div className="shrink-0 h-9 w-9 bg-accent rounded-full flex items-center justify-center">
-          <Mail className="h-5 w-5 text-muted-foreground" />
+      <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+        <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
+          <Mail className="h-5 w-5" />
         </div>
-        <a href="mailto:rhedge004@gmail.com">rhedge004@gmail.com</a>
+        <a
+          href="mailto:rhedge004@gmail.com"
+          className="text-gray-600 hover:text-blue-600 transition-colors"
+        >
+          rhedge004@gmail.com
+        </a>
       </div>
-      <div className="flex gap-2">
-        <div className="shrink-0 h-9 w-9 bg-accent rounded-full flex items-center justify-center">
-          <GithubIcon width={60} height={60} />
+      <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+        <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
+          <GithubIcon width={20} height={20} />
         </div>
         <Link
           href="https://github.com/rhedge004"
-          className="underline"
+          className="text-gray-600 hover:text-blue-600 transition-colors"
           target="_blank"
         >
           github.com/rhedge004
         </Link>
       </div>
-      <div className="flex gap-2">
-        <div className="shrink-0 h-9 w-9 bg-blue-500 rounded-full flex items-center justify-center">
-          <LinkedInIcon width={50} height={50} />
+      <div className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+        <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
+          <LinkedInIcon width={20} height={20} />
         </div>
         <Link
           href="https://www.linkedin.com/in/rhedge004/"
-          className="underline"
+          className="text-gray-600 hover:text-blue-600 transition-colors"
           target="_blank"
         >
           linkedin.com/in/rhedge004/
