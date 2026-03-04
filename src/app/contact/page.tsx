@@ -4,7 +4,7 @@ import ContactMe from "@/components/feature/ContactMe";
 export default function Contact() {
   return (
     <div className="min-h-screen bg-gray-50 py-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 animate-in fade-in duration-700">
         <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900">Contact</h1>
           <div className="h-1 w-20 bg-blue-500 mt-2 rounded"></div>

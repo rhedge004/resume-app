@@ -71,7 +71,7 @@ const myData: MyData = {
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50 py-10">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-6xl animate-in fade-in duration-700">
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900">About Me</h1>

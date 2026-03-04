@@ -5,7 +5,7 @@ import ToolsList from "@/components/feature/ToolsList";
 export default function Experience() {
   return (
     <div className="min-h-screen bg-gray-50 py-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 animate-in fade-in duration-700">
         <div className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900">
             Experience & Skills

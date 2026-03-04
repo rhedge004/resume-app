@@ -52,7 +52,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-gray-50/30">
       <main className="flex-grow w-full px-4 md:px-8 py-10">
         <div className="space-y-16">
-          <div className="flex flex-col lg:flex-row gap-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-10 items-start animate-in fade-in duration-700">
             <div className="w-full lg:w-1/3 xl:w-1/4 flex-shrink-0">
               <div className="relative aspect-square w-full max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-900/5 bg-white">
                 <Image
@@ -106,7 +106,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-in fade-in duration-700">
             {contents.map((content: Contents) => (
               <div
                 key={content.title}
