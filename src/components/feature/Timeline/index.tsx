@@ -11,11 +11,34 @@ interface Experiences {
 
 const experiences: Experiences[] = [
   {
-    title: "Software Engineer",
-    company: "Freelance",
-    period: "April 2025 - Present",
+    title: "Senior Frontend Developer",
+    company: "Freelance - (Real Estate AI Project)",
+    period: "December 2025 - Present",
     description:
-      "Developed and maintained multiple web applications and mobile apps. Created responsive designs, integrated third-party APIs, and implemented best practices for code quality and performance optimization.",
+      "Architected and developed the frontend for a cutting-edge Real Estate AI platform. Integrated Azure OpenAI and Azure Speech Services to deliver intelligent, voice-enabled property search and insights. Implemented interactive map features using the Google Maps API and built responsive, scalable interfaces with React, Next.js, and Tailwind CSS.",
+    technologies: [
+      "React",
+      "NextJS",
+      "Azure OpenAI",
+      "Azure Speech Services",
+      "Google Maps API",
+      "Tailwind CSS",
+      "TypeScript",
+      "Python",
+      "Angular",
+      "MySQL",
+      "Jest",
+      "Javascript",
+      "HTML",
+      "CSS",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "Freelance - (B2B Projects)",
+    period: "April 2025 - October 2025",
+    description:
+      "Engineered robust B2B web applications utilizing a versatile tech stack. Delivered responsive frontends with React, Next.js, and Angular, styled seamlessly using Tailwind CSS. Integrated these interfaces with scalable backend services powered by Symfony and Java, while ensuring reliable data handling with MySQL and high code quality through Jest.",
     technologies: [
       "React",
       "NextJS",
@@ -32,11 +55,11 @@ const experiences: Experiences[] = [
     ],
   },
   {
-    title: "Software Engineer",
+    title: "Software Engineer II",
     company: "Samsung R&D Institute Philippines",
     period: "March 2023 - April 2025",
     description:
-      "Developed and maintained multiple projects, implemented responsive designs, and integrated third-party APIs for enhanced functionality. Led the development of web applications, mentored junior developers, and implemented best practices for code quality and performance optimization.",
+      "Spearheaded enterprise-level web development from the ground up. Architected complex, typed frontends using TypeScript, React, and Next.js alongside UI libraries like Material UI, Ant Design, and Shadcn/ui. Collaborated with backend teams using Python and Java, mentored junior developers, and enforced rigorous testing standards with Jest.",
     technologies: [
       "React",
       "NextJS",
@@ -53,6 +76,7 @@ const experiences: Experiences[] = [
       "Material UI",
       "Ant Design",
       "Shadcn/ui",
+      "Figma",
     ],
   },
   {
@@ -60,7 +84,7 @@ const experiences: Experiences[] = [
     company: "Twist Resources",
     period: "November 2021 - February 2023",
     description:
-      "Developed and maintained multiple projects including iOS apps, implemented responsive designs, and integrated third-party APIs for enhanced functionality. Write unit tests newly created code on both backend and frontend.",
+      "Bridged mobile and web development by delivering cross-platform iOS applications using React Native and dynamic web interfaces with React and SCSS. Engineered full-stack solutions by integrating containerized Java Springboot backends, leveraging Redis for caching, PostgreSQL for data storage, and Docker for streamlined deployment.",
     technologies: [
       "React",
       "React Native",
@@ -78,7 +102,7 @@ const experiences: Experiences[] = [
     company: "Cafisglobal Inc.",
     period: "June 2020 - November 2021",
     description:
-      "Created responsive and interactive user interfaces, responsive Kiosk UI, collaborated with designers, and optimized application performance.",
+      "Specialized in building highly interactive user interfaces, including custom responsive Kiosk applications, using React and React Native. Optimized application performance and streamlined asset delivery with Webpack, while crafting maintainable stylesheets with SASS and ensuring UI reliability through Jest.",
     technologies: [
       "React",
       "React Native",
@@ -93,7 +117,7 @@ const experiences: Experiences[] = [
     company: "Sharesource Global",
     period: "June 2019 - April 2020",
     description:
-      "Created responsive and interactive user interfaces, collaborated with designers, and optimized application performance.",
+      "Developed and maintained interactive single-page applications using React and vanilla JavaScript. Collaborated closely with design teams to translate mockups into pixel-perfect, responsive components styled with SASS. Configured Webpack for optimized build processes and implemented foundational unit tests.",
     technologies: [
       "React",
       "React Native",

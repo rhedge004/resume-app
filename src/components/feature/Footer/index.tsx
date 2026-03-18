@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { GithubIcon, LinkedInIcon } from "@/components/ui/logos";
 import Link from "next/link";
 
@@ -11,6 +12,20 @@ export default function Footer() {
         </Link>
         <Link href={"https://www.linkedin.com/in/rhedge004/"} target="_blank">
           <LinkedInIcon width={30} height={30} />
+        </Link>
+      </div>
+      <div className="mt-8">
+        <Link
+          href="https://github.com/rhedge004/resume-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            size="lg"
+            className="shadow-md bg-gray-800 text-white hover:shadow-lg transition-all"
+          >
+            View Source Code
+          </Button>
         </Link>
       </div>
     </footer>
