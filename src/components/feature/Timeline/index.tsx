@@ -12,7 +12,7 @@ interface Experiences {
 const experiences: Experiences[] = [
   {
     title: "Senior Frontend Developer",
-    company: "Freelance - (Real Estate AI Project)",
+    company: "Cloudstaff - (Real Estate AI Project)",
     period: "December 2025 - Present",
     description:
       "Architected and developed the frontend for a cutting-edge Real Estate AI platform. Integrated Azure OpenAI and Azure Speech Services to deliver intelligent, voice-enabled property search and insights. Implemented interactive map features using the Google Maps API and built responsive, scalable interfaces with React, Next.js, and Tailwind CSS.",

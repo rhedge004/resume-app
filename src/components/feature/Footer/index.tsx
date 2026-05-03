@@ -20,12 +20,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Button
-            size="lg"
-            className="shadow-md bg-gray-800 text-white hover:shadow-lg transition-all"
-          >
-            View Source Code
-          </Button>
+          <Button>View Source Code</Button>
         </Link>
       </div>
     </footer>
