@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useState, useEffect } from "react";
 import { CloseIcon, MenuIcon } from "@/components/ui/logos";
+import { Star } from "lucide-react";
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -36,6 +37,10 @@ const links: Links[] = [
     href: "/contact",
     title: "Contact",
   },
+  {
+    href: "/portfolio",
+    title: "Portfolio",
+  },
 ];
 
 interface NavLinksProps {
@@ -46,22 +51,30 @@ const NavLinks: React.FC<NavLinksProps> = ({ onClick }) => {
   const pathname = usePathname();
   return (
     <nav className="flex flex-col md:flex-row md:space-x-4 mt-2 md:mt-0">
-      {links.map((link: Links) => (
-        <Link
-          href={link.href}
-          key={link.href}
-          className={clsx(
-            "hover:text-blue-600 px-4 py-3 md:px-1 md:py-0 font-[600] transition-all duration-100 ease-in-out block",
-            {
-              "border-l-4 md:border-l-0 md:border-b-4 border-blue-500 text-black-600 bg-gray-100 md:bg-transparent":
-                pathname === link.href,
-            },
-          )}
-          onClick={onClick}
-        >
-          {link.title}
-        </Link>
-      ))}
+      {links.map((link: Links) => {
+        const isPortfolio = link.href === "/portfolio";
+        return (
+          <Link
+            href={link.href}
+            key={link.href}
+            className={clsx(
+              "hover:text-blue-600 px-4 py-3 md:px-1 md:py-0 font-[600] transition-all duration-100 ease-in-out flex items-center gap-1.5",
+              {
+                "border-l-4 md:border-l-0 md:border-b-4 border-blue-500 text-black-600 bg-gray-100 md:bg-transparent":
+                  pathname === link.href,
+                "text-amber-600 hover:text-amber-700":
+                  isPortfolio && pathname !== link.href,
+              },
+            )}
+            onClick={onClick}
+          >
+            {isPortfolio && (
+              <Star className="w-4 h-4 fill-amber-400 text-amber-500" />
+            )}
+            {link.title}
+          </Link>
+        );
+      })}
     </nav>
   );
 };

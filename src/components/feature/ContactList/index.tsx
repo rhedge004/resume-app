@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function ContactList() {
   return (
     <div className="flex flex-col space-y-1">
-      <div className="flex items-center gap-4 p-1 rounded-lg hover:bg-gray-50 transition-colors">
+      {/* <div className="flex items-center gap-4 p-1 rounded-lg hover:bg-gray-50 transition-colors">
         <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
           <MapPin className="h-5 w-5" />
         </div>
         <p className="text-gray-600">
           021 Barangay San Luis, Santo Tomas, Batangas 4234
         </p>
-      </div>
+      </div> */}
       <div className="flex items-center gap-4 p-1 rounded-lg hover:bg-gray-50 transition-colors">
         <div className="shrink-0 h-10 w-10 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center">
           <Phone className="h-5 w-5" />
